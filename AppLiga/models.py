@@ -3,18 +3,18 @@ from django.db import models
 # Create your models here.
 
 
-class ligas(models.Model):
+class Liga(models.Model):
     nombre = models.CharField(max_length=40)
     division = models.IntegerField()
 
 
-class equipos(models.Model):
+class Equipo(models.Model):
     nombre = models.CharField(max_length=40)
-    division = models.IntegerField()
+    liga = models.ForeignKey(Liga, on_delete=models.CASCADE)
 
 
-class jugadores(models.Model):
+class Jugador(models.Model):
     nombre = models.CharField(max_length=40)
     posicion = models.CharField(max_length=40)
-    numero = models.IntegerField()
     edad = models.IntegerField()
+    equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)

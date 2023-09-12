@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+{% block contenido %}
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form action="{% url 'EquiposFormulario' %}" method="post"> {% csrf_token %} <!--token seguridad-->
+                    <h2>Registro de Equipos</h2>
+                    {{miFormulario.as_p}}
+                    <button type="submit"> Registrar Equipo </button>
+                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, dolore.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contenido %}

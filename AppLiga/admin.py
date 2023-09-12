@@ -1,20 +1,25 @@
 from django.contrib import admin
 from .models import Liga, Equipo, Jugador
 
-# Register your models here.
-
-admin.site.register(Liga)
-admin.site.register(Equipo)
-admin.site.register(Jugador)
+# Registro las clases para que se muestren en columnas en el admin
 
 
 class LigaAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "division")
+    list_display = ["nombre", "division"]
 
 
 class EquipoAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "liga")
+    list_display = ["nombre", "liga"]
 
 
 class JugadorAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "posicion", "edad", "equipo")
+    list_display = ["nombre", "posicion", "edad", "equipo"]
+    search_fields = ["nombre", "posicion", "edad", "equipo"]
+    list_filter = ["nombre", "posicion", "edad", "equipo"]
+
+
+# Register your models here.
+
+admin.site.register(Liga, LigaAdmin)
+admin.site.register(Equipo, EquipoAdmin)
+admin.site.register(Jugador, JugadorAdmin)

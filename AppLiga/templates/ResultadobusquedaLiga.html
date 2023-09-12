@@ -1,0 +1,21 @@
+{% extends 'padre.html' %}
+{% block contenido %}
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Resultados de la búsqueda de Equipos por Liga</h2>
+
+                {% if equipos %}
+                <ul>
+                    {% for equipo in equipos %}
+                    <li>{{equipo}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contenido %}

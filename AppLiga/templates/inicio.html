@@ -4,9 +4,19 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <h2>INICIO</h2>
-                <p class="lead">sp.bogetti@gmail.com</p>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, dolore.</p>
+                <h2>Inicio</h2>
+                <br>
+                <p>Bienvenido a Proyecto Liga</p>
+                <br>
+                <p>Crea y administra tu propio torneo!</p>
+                <br>
+                <a href="{% url 'busquedaLiga' %}">
+                    <button type="button">Ir a Buscar Equipos por liga</button>
+                </a>
+                <br><br>
+                <a href="{% url 'busquedaPosicion' %}">
+                    <button type="button">Ir a Buscar Jugadores por Posición</button>
+                </a>
             </div>
         </div>
     </div>
